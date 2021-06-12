@@ -1,12 +1,12 @@
-package com.demo.chianing.test.proxy;
+package com.demo.chianing.test.proxy.factory;
 
 import com.demo.chianing.test.proxy.service.ITestService;
 
-public class StaticProxy implements ITestService {
+public class StaticProxyFactory implements ITestService {
 
     private final ITestService target;
 
-    public StaticProxy(ITestService target) {
+    public StaticProxyFactory(ITestService target) {
         this.target = target;
     }
 

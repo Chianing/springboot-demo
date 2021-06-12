@@ -1,4 +1,4 @@
-package com.demo.chianing.test.proxy;
+package com.demo.chianing.test.proxy.factory;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -6,11 +6,11 @@ import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
-public class CGlibDynamicProxy implements MethodInterceptor {
+public class CGlibDynamicProxyFactory implements MethodInterceptor {
 
     private final Object target;
 
-    public CGlibDynamicProxy(Object target) {
+    public CGlibDynamicProxyFactory(Object target) {
         this.target = target;
     }
 

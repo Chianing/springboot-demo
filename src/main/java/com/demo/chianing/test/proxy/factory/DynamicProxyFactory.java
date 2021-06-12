@@ -1,14 +1,14 @@
-package com.demo.chianing.test.proxy;
+package com.demo.chianing.test.proxy.factory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class DynamicProxy {
+public class DynamicProxyFactory {
 
     private final Object target;
 
-    public DynamicProxy(Object target) {
+    public DynamicProxyFactory(Object target) {
         this.target = target;
     }
 
