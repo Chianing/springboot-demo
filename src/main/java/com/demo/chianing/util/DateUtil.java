@@ -10,6 +10,10 @@ public class DateUtil {
 
     public static final SimpleDateFormat defaultFormat = new SimpleDateFormat(YYYY_MM_DD_HH_MM_SS);
 
+    public static String getDefaultFormatDate() {
+        return getDefaultFormatDate(new Date());
+    }
+
     public static String getDefaultFormatDate(long time) {
         return getDefaultFormatDate(new Date(time));
     }
