@@ -1,11 +1,9 @@
 package com.demo.chianing.controller;
 
 import com.demo.chianing.system.http.ResBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class BaseController extends ResBuilder {
-
-    public final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 }
