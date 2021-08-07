@@ -4,40 +4,33 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/**
+ * 自定义注解切面
+ */
 @Slf4j
 @Aspect
 @Component
-public class TimeCostAspect {
+public class CustomAnnotationAspect {
 
     /**
-     * 切点
+     * 接口耗时监控 切面
+     * TimeCostMonitor
      */
-    @Pointcut("@annotation(com.demo.chianing.system.annotation.TimeCostMonitor)")
-    public void getTimeCost() {
-    }
-
-    @Around("getTimeCost()")
-    public Object doAround(ProceedingJoinPoint joinPoint) {
-        Object result = null;
-
+    @Around("@annotation(com.demo.chianing.system.annotation.TimeCostMonitor)")
+    public Object doTimeCostMonitorAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        Object result;
         long startTime = System.currentTimeMillis();
 
-        try {
-            // 执行方法
-            result = joinPoint.proceed();
-        } catch (Throwable e) {
-            log.error("catch throwAble: ", e);
-        }
+        // 执行方法
+        result = joinPoint.proceed();
 
         // 获取类名称
         String clazzName = joinPoint.getSignature().getDeclaringTypeName();
         // 获取方法名称
         String methodName = joinPoint.getSignature().getName();
-
-        log.info("[Time cost monitor] clazz: {}, method: {}, timeCost: {}ms",
+        log.info("[print time cost] clazz: {}, method: {}, timeCost: {}ms",
                 clazzName, methodName, (System.currentTimeMillis() - startTime));
 
         return result;
