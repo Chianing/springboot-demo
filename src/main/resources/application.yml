@@ -1,0 +1,7 @@
+# 激活环境
+spring:
+  profiles:
+    active: dev
+# 端口号
+server:
+  port: 8080
