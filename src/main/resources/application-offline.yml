@@ -1,2 +1,2 @@
-active:
-  env: offline
+system:
+  activeEnv: offline

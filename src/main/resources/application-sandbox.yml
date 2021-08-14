@@ -1,2 +1,2 @@
-active:
-  env: sandbox
+system:
+  activeEnv: sandbox

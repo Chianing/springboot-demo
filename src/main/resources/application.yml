@@ -2,6 +2,12 @@
 spring:
   profiles:
     active: dev
+
 # 端口号
 server:
   port: 8080
+
+# 系统自定义环境变量
+system:
+  admins:
+    - hanjiaing

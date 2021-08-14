@@ -1,2 +1,2 @@
-active:
-  env: dev
+system:
+  activeEnv: dev

@@ -1,2 +1,2 @@
-active:
-  env: online
+system:
+  activeEnv: online

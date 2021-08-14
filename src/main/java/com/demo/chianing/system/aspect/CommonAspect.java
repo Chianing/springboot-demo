@@ -17,6 +17,7 @@ public class CommonAspect {
 
     /**
      * controller日志 切面
+     * 记录耗时、方法入参等信息
      * <p>
      * execution(<修饰符模式>？<返回类型模式><方法名模式>(<参数模式>)<异常模式>?)
      */

@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "system.admins",
+      "type": "java.lang.String",
+      "description": "system administrators."
+    },
+    {
+      "name": "system.activeEnv",
+      "type": "java.lang.String",
+      "description": "current active env profile."
+    }
+  ]
+}
