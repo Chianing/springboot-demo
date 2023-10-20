@@ -20,7 +20,9 @@ public enum ResponseCode {
     FAILED(2000, "failed"),
 
     ERROR_UNKNOWN(2100, "unknown error"),
-    ERROR_PARAM(2101, "param error");
+    ERROR_PARAM(2101, "param error"),
+
+    ERROR_OUTER(2200, "outer service error");
 
     private final int code;
     private final String errMsg;

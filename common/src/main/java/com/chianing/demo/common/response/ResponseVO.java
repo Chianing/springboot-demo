@@ -73,6 +73,14 @@ public class ResponseVO<T> {
         return build(ResponseCode.ERROR_UNKNOWN, errMsg);
     }
 
+    public static <T> ResponseVO<T> errorOuter() {
+        return build(ResponseCode.ERROR_OUTER);
+    }
+
+    public static <T> ResponseVO<T> errorOuter(String errMsg) {
+        return build(ResponseCode.ERROR_OUTER, errMsg);
+    }
+
     private static <T> ResponseVO<T> build(ResponseCode responseCode) {
         return ResponseVO.<T>builder()
                 .code(responseCode.getCode())
