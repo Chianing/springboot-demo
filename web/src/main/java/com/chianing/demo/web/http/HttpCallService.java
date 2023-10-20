@@ -1,6 +1,7 @@
 package com.chianing.demo.web.http;
 
 import com.chianing.demo.web.http.api.TestApi;
+import com.chianing.demo.web.http.config.OuterApiProperties;
 import com.chianing.demo.web.http.convert.FastJsonConvertFactory;
 import jakarta.annotation.Resource;
 import okhttp3.OkHttpClient;
@@ -18,7 +19,9 @@ import retrofit2.Retrofit;
 @Component
 public class HttpCallService {
 
-    private static final String testApiBaseUrl = "https://api.apiopen.top/api/";
+    @Resource
+    private OuterApiProperties outerApiProperties;
+
     @Resource
     private FastJsonConvertFactory fastJsonConvertFactory;
     @Resource
@@ -27,7 +30,7 @@ public class HttpCallService {
 
     public TestApi getTestApiCall() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(testApiBaseUrl)
+                .baseUrl(outerApiProperties.getTestHost())
                 .client(testApiOkHttpClient)
                 .addConverterFactory(fastJsonConvertFactory)
                 .build();
