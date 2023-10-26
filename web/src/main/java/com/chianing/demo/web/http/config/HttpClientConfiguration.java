@@ -1,5 +1,6 @@
 package com.chianing.demo.web.http.config;
 
+import com.chianing.demo.web.http.interceptor.ClientRequestLogInterceptor;
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +27,8 @@ public class HttpClientConfiguration {
     public OkHttpClient defaultOkHttpClient() {
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder()
                 .readTimeout(30, TimeUnit.SECONDS)
-                .connectTimeout(30, TimeUnit.SECONDS);
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .addInterceptor(new ClientRequestLogInterceptor("default", true));
         builder.setConnectionPool$okhttp(new ConnectionPool(64, 5, TimeUnit.MINUTES));
         return builder.build();
     }
@@ -40,7 +42,8 @@ public class HttpClientConfiguration {
     public OkHttpClient testApiOkHttpClient() {
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder()
                 .readTimeout(5, TimeUnit.SECONDS)
-                .connectTimeout(5, TimeUnit.SECONDS);
+                .connectTimeout(5, TimeUnit.SECONDS)
+                .addInterceptor(new ClientRequestLogInterceptor("testApi", true));
         builder.setConnectionPool$okhttp(new ConnectionPool(3, 1, TimeUnit.MINUTES));
         return builder.build();
     }

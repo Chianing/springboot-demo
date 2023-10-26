@@ -1,4 +1,4 @@
-package com.chianing.demo.web.http.response;
+package com.chianing.demo.web.http.api.response;
 
 import lombok.Data;
 

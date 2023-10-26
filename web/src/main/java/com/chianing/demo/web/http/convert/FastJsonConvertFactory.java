@@ -1,6 +1,7 @@
 package com.chianing.demo.web.http.convert;
 
 import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -30,7 +31,7 @@ public class FastJsonConvertFactory extends Converter.Factory {
         return (Converter<ResponseBody, Object>) value -> {
             try (BufferedSource bufferedSource = Okio.buffer(value.source())) {
                 String tempStr = bufferedSource.readUtf8();
-                return JSON.parseObject(tempStr, type);
+                return JSONObject.parseObject(tempStr, type);
             }
         };
     }

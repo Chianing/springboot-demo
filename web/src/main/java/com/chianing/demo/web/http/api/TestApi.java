@@ -1,6 +1,6 @@
 package com.chianing.demo.web.http.api;
 
-import com.chianing.demo.web.http.response.TestApiResVO;
+import com.chianing.demo.web.http.api.response.TestApiResVO;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

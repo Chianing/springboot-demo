@@ -2,7 +2,7 @@ package com.chianing.demo.web.service.impl;
 
 import com.chianing.demo.common.util.CheckEmptyUtil;
 import com.chianing.demo.web.http.HttpCallService;
-import com.chianing.demo.web.http.response.TestApiResVO;
+import com.chianing.demo.web.http.api.response.TestApiResVO;
 import com.chianing.demo.web.service.TestService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
